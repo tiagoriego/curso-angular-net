@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin-bottom: 200px;
+}
+
+.cp {
+    border-bottom: 1px solid red;
+    padding: 10px;
+}
+
+p {
+    text-decoration: underline;
+}

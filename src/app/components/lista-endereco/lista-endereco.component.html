@@ -1,0 +1,33 @@
+<div class="cp">
+  <p>Lista de Endereço</p>
+
+  <div *ngIf="enderecos.length > 0; else naoHaEndereco">
+    <table>
+      <tr>
+        <th>#</th>
+        <th>logradouro</th>
+        <th>numero</th>
+        <th>bairro</th>
+        <th>cep</th>
+        <th>cidade</th>
+        <th>estado</th>
+      </tr>
+      <tr *ngFor="let endereco of enderecos; index as i">
+        <td [ngStyle]="{ 'font-size': '20px', color }">{{ i + 1 }}</td>
+        <td>{{ endereco.logradouro }}</td>
+        <td [ngClass]="class">{{ endereco.numero }}</td>
+        <td [ngClass]="{ bold: true, underline: true }">
+          {{ endereco.bairro }}
+        </td>
+        <td>{{ endereco.cep }}</td>
+        <td>{{ endereco.cidade }}</td>
+        <td>{{ endereco.estado }}</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <ng-template #naoHaEndereco>
+      <p>Não há endereço cadastrado.</p>
+    </ng-template>
+  </div>
+</div>

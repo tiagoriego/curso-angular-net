@@ -1,0 +1,10 @@
+<div class="cp">
+  <p>Valor do número: {{ numero }}</p>
+  <button (click)="onMudarNumero()">Alterar Número</button>
+  <div [ngSwitch]="numero">
+    <div *ngSwitchCase="5">Você venceu o sorteio! Valor do n. é 5</div>
+    <div *ngSwitchCase="7">Você venceu o sorteio! Valor do n. é 7</div>
+    <div *ngSwitchCase="8">Você venceu o sorteio! Valor do n. é 8</div>
+    <div *ngSwitchDefault>Você perdeu!</div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="cp">
+  <p>Cliente</p>
+  <ul>
+    <li>Nome: {{ cliente.nome }}</li>
+    <li>CPF: {{ cliente.cpf }}</li>
+    <li>Ativo: {{ ativo }}</li>
+  </ul>
+  <div>
+    <div class="form">
+      <div>
+        <label for="">logradouro</label>
+        <input
+          type="text"
+          name="logradouro"
+          [(ngModel)]="endereco.logradouro"
+        />
+      </div>
+      <div>
+        <label for="">numero</label>
+        <input type="text" name="numero" [(ngModel)]="endereco.numero" />
+      </div>
+      <div>
+        <label for="">bairro</label>
+        <input type="text" name="bairro" [(ngModel)]="endereco.bairro" />
+      </div>
+      <div>
+        <label for="">cep</label>
+        <input type="text" name="cep" [(ngModel)]="endereco.cep" />
+      </div>
+      <div>
+        <label for="">cidade</label>
+        <input type="text" name="cidade" [(ngModel)]="endereco.cidade" />
+      </div>
+      <div>
+        <label for="">estado</label>
+        <input type="text" name="estado" [(ngModel)]="endereco.estado" />
+      </div>
+    </div>
+    <div>
+      <button (click)="onCadastrarEndereco()">Cadastrar Endereço</button>
+    </div>
+  </div>
+</div>
+
+<app-lista-endereco [enderecos]="enderecos"></app-lista-endereco>

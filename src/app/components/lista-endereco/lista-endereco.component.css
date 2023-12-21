@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+}
+
+table th {
+    background-color: #eee;
+}
+
+table th, td {
+    border: 1px solid #ccc;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: bold;
+}

@@ -1,0 +1,9 @@
+.form div {
+    padding: 5px;
+}
+
+.form label {
+    margin-right: 100px;
+    width: 200px;
+    display: block;
+}
