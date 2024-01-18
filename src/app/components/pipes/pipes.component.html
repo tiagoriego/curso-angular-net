@@ -1,0 +1,11 @@
+<div class="cp">
+  <h3>{{ 'Isto aqui é um cabeçalho utilizando pipe' | titlecase }}</h3>
+  <p>{{ 'Este conteúdo está em caixa-alta' | uppercase }}</p>
+  <p>{{ 'Este conteúdo está em caixa-baixa' | lowercase }}</p>
+  <p>Hoje é: {{ hoje | date: 'fullDate' }}</p>
+  <p>Hoje é: {{ hoje | date: 'dd/MM/yyyy' }}</p>
+  <p>Hoje é: {{ hoje | date: 'dd/MM/yyyy HH:mm:ss' }}</p>
+  <p>O valor do produto é: {{ '150.99' | currency: 'R$' }}</p>
+  <p>O valor do produto é: {{ '150.095959' | currency: 'R$':'symbol': '0.2-2' }}</p>
+  
+</div>

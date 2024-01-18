@@ -1,0 +1,11 @@
+<div class="cp">
+    <div>
+        <ul>
+            <li>Id: {{ produto?.id }}</li>
+            <li>Produto: {{ produto?.nome }}</li>
+            <li>Descrição: {{ produto?.descricao }}</li>
+            <li>Valor: {{ produto?.valor | currency: 'R$' }}</li>
+        </ul>
+    </div>
+    <a routerLink="/produto-lista">Voltar</a>
+</div>

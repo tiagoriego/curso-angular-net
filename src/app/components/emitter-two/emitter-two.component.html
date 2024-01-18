@@ -1,0 +1,18 @@
+<div class="cp">
+    <h3>Cadasro de Pessoas</h3>
+    <div class="form">
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" [(ngModel)]="nome">
+        </div>
+        <div>
+            <div>
+                <label for="idade">Idade</label>
+                <input type="text" name="idade" [(ngModel)]="idade">
+            </div>
+        </div>
+        <div>
+            <button (click)="handleAdicionarPessoa()" >Adicinar</button>
+        </div>
+    </div>
+</div>

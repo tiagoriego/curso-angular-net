@@ -1,0 +1,19 @@
+<div class="cp">
+  <p>Lista de Produtos</p>
+  <div>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Ação</th>
+      </tr>
+      <tr *ngFor="let produto of produtos; index as i">
+        <td>{{ i + 1 }}</td>
+        <td>{{ produto.id }}</td>
+        <td>{{ produto.nome }}</td>
+        <td><a routerLink="/detalhe-produto/{{ produto.id }}">Ver mais</a></td>
+      </tr>
+    </table>
+  </div>
+</div>

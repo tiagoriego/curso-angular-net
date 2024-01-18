@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
+import { Endereco } from 'src/app/interfaces/endereco';
 
-export type Endereco = {
-  logradouro?: string;
-  numero?: number;
-  bairro?: string;
-  cep?: string;
-  cidade?: string;
-  estado?: string;
-};
 
 @Component({
   selector: 'app-cliente',

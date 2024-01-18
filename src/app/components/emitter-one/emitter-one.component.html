@@ -1,0 +1,15 @@
+<app-emitter-two (adicionarPessoa)="onAdicinarPessoa($event)"></app-emitter-two>
+<div class="cp">
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Idade</th>
+        </tr>
+        <tr *ngFor="let pessoa of pessoas; index as i">
+            <td>{{ i }}</td>
+            <td>{{ pessoa.nome }}</td>
+            <td>{{ pessoa.idade }}</td>
+        </tr>
+    </table>
+</div>

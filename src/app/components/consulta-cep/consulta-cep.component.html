@@ -1,0 +1,33 @@
+<div class="cp">
+  <h3>Consulta de CEP</h3>
+  <div class="form">
+    <div>
+      <label for="nome">Informe o CEP</label>
+      <input type="text" name="cep" [(ngModel)]="cep" />
+      <button (click)="onConsultaCEP()">Consultar</button>
+    </div>
+  </div>
+
+  <div>
+    <table *ngIf="endereco">
+      <tr>
+        <th>#</th>
+        <th>logradouro</th>
+        <th>bairro</th>
+        <th>cep</th>
+        <th>cidade</th>
+        <th>estado</th>
+      </tr>
+      <tr>
+        <td>#</td>
+        <td>{{ endereco.address }}</td>
+        <td>{{ endereco.district }}</td>
+        <td>{{ endereco.cep }}</td>
+        <td>{{ endereco.city }}</td>
+        <td>{{ endereco.state }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="error" *ngIf="error">Ocorreu um erro ao tentar consultar o cep. <br> {{ error }}</div>
+</div>

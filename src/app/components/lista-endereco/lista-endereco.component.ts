@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Endereco } from '../cliente/cliente.component';
+import { Endereco } from 'src/app/interfaces/endereco';
 
 @Component({
   selector: 'app-lista-endereco',

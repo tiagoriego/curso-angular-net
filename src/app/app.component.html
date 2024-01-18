@@ -1,7 +1,22 @@
-<h1>
-  Olá Angular!
-</h1>
-<app-primeiro></app-primeiro>
-<app-segundo></app-segundo>
-<app-cliente></app-cliente>
-<app-casos></app-casos>
+<header>
+  <h1>Curso Angular</h1>
+</header>
+<nav>
+  <ul>
+    <li><a routerLink="primeiro-componente">Primeiro Componente</a></li>
+    <li><a routerLink="segundo-componente">Segundo Componente</a></li>
+    <li><a routerLink="clientes">Clientes</a></li>
+    <li><a routerLink="pipes">Pipes</a></li>
+    <li><a routerLink="evento-pai-filho">Repassando eventos</a></li>
+    <li><a routerLink="evento-pai-filho">Repassando eventos</a></li>
+    <li><a routerLink="casos">Casos (ngSwitch)</a></li>
+    <li><a routerLink="produto-lista">Listar Produtos</a></li>
+    <li><a routerLink="consulta-cep">Consulta CEP</a></li>
+  </ul>
+</nav>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <p>Footer</p>
+</footer>

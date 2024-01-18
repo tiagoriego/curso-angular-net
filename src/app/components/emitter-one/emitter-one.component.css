@@ -1,0 +1,10 @@
+table {
+    width: 100%;
+    border: 1px solid #eee;
+}
+
+table th, td {
+    border: 1px solid #eee;
+    text-align: center;
+    text-transform: uppercase;
+}
