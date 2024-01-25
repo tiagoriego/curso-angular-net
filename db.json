@@ -1,28 +1,10 @@
 {
   "cliente": [
     {
-      "id": 102030,
-      "nome": "José da Silva",
-      "email": "jose@silva.com",
-      "telefone": "11966225544"
-    },
-    {
-      "nome": "Fabio Oliveira",
-      "email": "fabio@silva.com",
-      "telefone": "11966225544",
-      "id": 102031
-    },
-    {
-      "nome": "João Silva",
-      "email": "joao@joao.com",
-      "telefone": "115522154",
-      "id": 102032
-    },
-    {
-      "nome": "ada",
-      "email": "sdasdas",
-      "telefone": "dasdasd",
-      "id": 102033
+      "nome": "Jose Silva",
+      "email": "jose@jose.com",
+      "telefone": "1122556699",
+      "id": 1
     }
   ]
 }
