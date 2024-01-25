@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="alert alert-primary">
+            Para adicionar um novo cliente <button class="btn btn-primary btn-sm" (click)="onCadatrarCliente()" >clique aqui</button>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of cliente">
+            <td>
+                <button class="btn btn-primary btn-sm" >Editar</button> &nbsp;
+                <button class="btn btn-danger btn-sm" >Remover</button>
+            </td>
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.email }}</td>
+            <td>{{ cliente.telefone }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <h3>Cadastro de Cliente</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <form [formGroup]="formCadastroCliente" (submit)="onCadastrarCliente()">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            formControlName="nome"
+            [class.is-invalid]="nome?.invalid && (nome?.dirty || nome?.touched)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            [class.is-invalid]="
+              email?.invalid && (email?.dirty || email?.touched)
+            "
+          />
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            formControlName="telefone"
+            [class.is-invalid]="
+              telefone?.invalid && (telefone?.dirty || telefone?.touched)
+            "
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+</div>
