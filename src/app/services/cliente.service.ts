@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BASE_URL_CLIENT_API } from '../env/env';
 import { Cliente } from '../interfaces/cliente';
@@ -12,8 +12,16 @@ export class ClienteService {
   private baseUrl = BASE_URL_CLIENT_API
   constructor(private httpClient: HttpClient) {}
 
+  getHttpOptions() {
+    return {
+      headers: new HttpHeaders({
+        'x-app-date': (new Date().toISOString())
+      })
+    }
+  } 
+
   getAll(): Observable<Cliente[]> {
-    return this.httpClient.get<Cliente[]>(`${this.baseUrl}/cliente`)
+    return this.httpClient.get<Cliente[]>(`${this.baseUrl}/cliente`, this.getHttpOptions())
   }
 
   getById(id: number): Observable<Cliente> {

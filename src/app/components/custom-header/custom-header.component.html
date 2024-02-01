@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/">Curso Angular</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="navbarScroll"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarScroll"
+      [collapse]="isCollapsed"
+      dropdown
+    >
+      <ul
+        class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll"
+        style="max-height: 100px"
+      >
+        <li class="nav-item dropdown" dropdownToggle>
+          <a class="nav-link dropdown-toggle" role="button"> Clientes </a>
+          <ul class="dropdown-menu" *dropdownMenu>
+            <li>
+              <a class="dropdown-item" routerLink="/cliente-lista"
+                >Lista de Clientes</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/cadastro-cliente"
+                >Cadastrar Clientes</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/logout"
+                >Sair</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

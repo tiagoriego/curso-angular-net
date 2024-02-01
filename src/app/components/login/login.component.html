@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="col-sm-6 mt-5 box">
+      <div class="title">Login</div>
+      <form [formGroup]="formLogin" (submit)="onLogin()">
+        <div class="form-group">
+          <label for="username">E-mail:</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Informe o e-mail"
+            formControlName="email"
+            [class.is-invalid]="
+              email?.invalid && (email?.dirty || email?.touched)
+            "
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Informe o senha"
+            formControlName="password"
+            [class.is-invalid]="
+              password?.invalid && (password?.dirty || password?.touched)
+            "
+          />
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="showError">
+          Usuário ou senha ínvalido!
+        </div>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>

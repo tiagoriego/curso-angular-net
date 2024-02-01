@@ -5,6 +5,26 @@
       "email": "jose@jose.com",
       "telefone": "1122556699",
       "id": 1
+    },
+    {
+      "nome": "Marcos Silva",
+      "email": "marcos@marcos.com",
+      "telefone": "1122334555",
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "teste@teste.com",
+      "password": "$2a$10$RwwwWR44./uey.JYpsep5OZkpDk8v0SldKbLhZLqXRHU5tXZmdwC2",
+      "name": "Usuário Teste",
+      "roles": [
+        "CADASTRAR_CLIENTE",
+        "EDITAR_CLIENTE",
+        "EXCLUIR_CLIENTE",
+        "LISTAR_CLIENTE"
+      ],
+      "id": 1
     }
   ]
 }
