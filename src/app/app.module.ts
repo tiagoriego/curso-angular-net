@@ -46,7 +46,7 @@ import { ClienteEditarComponent } from './components/cliente-editar/cliente-edit
     AppBootstrapModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [HttpInterceptorProviders],
   bootstrap: [AppComponent]
