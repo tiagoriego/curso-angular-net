@@ -68,6 +68,10 @@ export class LoginService {
     })
   }
 
+  getSoma(a: number, b: number): number {
+    return a + b
+  }
+
   logout() {
     localStorage.clear()
   }
