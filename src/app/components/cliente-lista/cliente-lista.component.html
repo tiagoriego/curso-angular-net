@@ -3,7 +3,14 @@
   <div class="row">
     <div class="col-sm-12">
         <div class="alert alert-primary">
-            Para adicionar um novo cliente <button class="btn btn-primary btn-sm" (click)="onCadatrarCliente()" >clique aqui</button>
+            <span appDestaque>Para adicionar um novo cliente</span> <button class="btn btn-primary btn-sm" (click)="onCadatrarCliente()" >clique aqui</button>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Filtrar por: id, nome, e-mail e telefone" [(ngModel)]="searchText">
         </div>
     </div>
   </div>
@@ -20,15 +27,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of cliente">
+          <tr *ngFor="let cliente of cliente | filtrarLista: searchText">
             <td>
                 <button class="btn btn-primary btn-sm" >Editar</button> &nbsp;
                 <button class="btn btn-danger btn-sm" (click)="onRemoveCliente(template, cliente.id)" >Remover</button>
             </td>
             <td>{{ cliente.id }}</td>
-            <td>{{ cliente.nome }}</td>
-            <td>{{ cliente.email }}</td>
-            <td>{{ cliente.telefone }}</td>
+            <td>{{ cliente.nome | titlecase }}</td>
+            <td>{{ cliente.email | lowercase }}</td>
+            <td>{{ cliente.telefone | telefone }}</td>
           </tr>
         </tbody>
       </table>

@@ -14,6 +14,7 @@ export class ClienteListaComponent implements OnInit {
   public cliente: Cliente[] = [];
   public modalRef?: BsModalRef;
   public clienteId: number = 0;
+  public searchText: string = '';
 
   constructor(
     private clienteSevice: ClienteService,
