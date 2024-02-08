@@ -20,6 +20,7 @@ import { DestaqueDirective } from './directives/destaque.directive';
 import { UserDirective } from './directives/user.directive';
 import { TelefonePipe } from './pipes/telefone.pipe';
 import { FiltrarListaPipe } from './pipes/filtrar-lista.pipe';
+import { ClienteEditarComponent } from './components/cliente-editar/cliente-editar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FiltrarListaPipe } from './pipes/filtrar-lista.pipe';
     DestaqueDirective,
     UserDirective,
     TelefonePipe,
-    FiltrarListaPipe
+    FiltrarListaPipe,
+    ClienteEditarComponent
   ],
   imports: [
     BrowserModule,

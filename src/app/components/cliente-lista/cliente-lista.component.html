@@ -2,16 +2,24 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
-        <div class="alert alert-primary">
-            <span appDestaque>Para adicionar um novo cliente</span> <button class="btn btn-primary btn-sm" (click)="onCadatrarCliente()" >clique aqui</button>
-        </div>
+      <div class="alert alert-primary">
+        <span appDestaque>Para adicionar um novo cliente</span>
+        <button class="btn btn-primary btn-sm" (click)="onCadatrarCliente()">
+          clique aqui
+        </button>
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Filtrar por: id, nome, e-mail e telefone" [(ngModel)]="searchText">
-        </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Filtrar por: id, nome, e-mail e telefone"
+          [(ngModel)]="searchText"
+        />
+      </div>
     </div>
   </div>
   <div class="row">
@@ -27,10 +35,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let cliente of cliente | filtrarLista: searchText">
+          <tr *ngFor="let cliente of cliente | filtrarLista : searchText">
             <td>
-                <button class="btn btn-primary btn-sm" >Editar</button> &nbsp;
-                <button class="btn btn-danger btn-sm" (click)="onRemoveCliente(template, cliente.id)" >Remover</button>
+              <button
+                class="btn btn-primary btn-sm"
+                (click)="onEditarCliente(cliente.id)"
+              >
+                Editar
+              </button>
+              &nbsp;
+              <button
+                class="btn btn-danger btn-sm"
+                (click)="onRemoveCliente(template, cliente.id)"
+              >
+                Remover
+              </button>
             </td>
             <td>{{ cliente.id }}</td>
             <td>{{ cliente.nome | titlecase }}</td>
@@ -45,8 +64,13 @@
 <ng-template #template>
   <div class="modal-body text-center">
     <p>Deseja realmente remover o cliente?</p>
-    <button type="button" class="btn btn-default" (click)="onConfirmaRemover()">Sim</button> &nbsp;
-    <button type="button" class="btn btn-primary" (click)="onDesisteRemover()">Não</button>
+    <button type="button" class="btn btn-default" (click)="onConfirmaRemover()">
+      Sim
+    </button>
+    &nbsp;
+    <button type="button" class="btn btn-primary" (click)="onDesisteRemover()">
+      Não
+    </button>
   </div>
 </ng-template>
 <app-custom-footer></app-custom-footer>

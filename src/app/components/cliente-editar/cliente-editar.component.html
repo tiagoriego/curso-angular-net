@@ -1,0 +1,48 @@
+<app-custom-header></app-custom-header>
+<div class="container-fluid">
+  <h3>Editar Cliente</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <form [formGroup]="formEditarCliente" (submit)="onEditarCliente()">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            formControlName="nome"
+            [class.is-invalid]="nome?.invalid && (nome?.dirty || nome?.touched)"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            [class.is-invalid]="
+              email?.invalid && (email?.dirty || email?.touched)
+            "
+          />
+        </div>
+        <div class="form-group">
+          <label for="telefone">Telefone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telefone"
+            formControlName="telefone"
+            [class.is-invalid]="
+              telefone?.invalid && (telefone?.dirty || telefone?.touched)
+            "
+          />
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button> &nbsp;
+        <button type="button" class="btn btn-primary" (click)="onCancelar()" >Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-custom-footer></app-custom-footer>

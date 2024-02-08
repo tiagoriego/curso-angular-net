@@ -8,6 +8,7 @@ import { authGuard } from './guards/auth.guard';
 import { rolesGuard } from './guards/roles.guard';
 import { Erro401Component } from './components/erro401/erro401.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ClienteEditarComponent } from './components/cliente-editar/cliente-editar.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,12 @@ const routes: Routes = [
     component: ClienteCadastroComponent,
     canActivate: [authGuard, rolesGuard],
     data: { roles: ['CADASTRAR_CLIENTE'] },
+  },
+  {
+    path: 'editar-cliente/:id',
+    component: ClienteEditarComponent,
+    canActivate: [authGuard, rolesGuard],
+    data: { roles: ['EDITAR_CLIENTE'] },
   },
   {
     path: 'login',

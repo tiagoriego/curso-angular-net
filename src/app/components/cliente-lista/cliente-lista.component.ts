@@ -49,7 +49,7 @@ export class ClienteListaComponent implements OnInit {
   onConfirmaRemover(): void {
     this.clienteSevice.delete(this.clienteId).subscribe({
       next: () => {
-        this.loadCliente()
+        this.loadCliente();
         this.modalRef?.hide();
       },
     });
@@ -57,5 +57,9 @@ export class ClienteListaComponent implements OnInit {
 
   onDesisteRemover(): void {
     this.modalRef?.hide();
+  }
+
+  onEditarCliente(id: string) {
+    this.router.navigateByUrl(`/editar-cliente/${id}`);
   }
 }
