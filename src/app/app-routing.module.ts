@@ -9,6 +9,7 @@ import { rolesGuard } from './guards/roles.guard';
 import { Erro401Component } from './components/erro401/erro401.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ClienteEditarComponent } from './components/cliente-editar/cliente-editar.component';
+import { formGuard } from './guards/form.guard';
 
 const routes: Routes = [
   {
@@ -21,12 +22,14 @@ const routes: Routes = [
     path: 'cadastro-cliente',
     component: ClienteCadastroComponent,
     canActivate: [authGuard, rolesGuard],
+    canDeactivate: [formGuard],
     data: { roles: ['CADASTRAR_CLIENTE'] },
   },
   {
     path: 'editar-cliente/:id',
     component: ClienteEditarComponent,
     canActivate: [authGuard, rolesGuard],
+    canDeactivate: [formGuard],
     data: { roles: ['EDITAR_CLIENTE'] },
   },
   {
@@ -41,11 +44,11 @@ const routes: Routes = [
   {
     path: '401',
     component: Erro401Component,
-    canActivate: [authGuard]
+    canActivate: [authGuard],
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
   },
   {
     path: '',

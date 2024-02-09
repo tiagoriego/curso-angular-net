@@ -8,14 +8,13 @@ import { ClienteService } from 'src/app/services/cliente.service';
 @Component({
   selector: 'app-cliente-cadastro',
   templateUrl: './cliente-cadastro.component.html',
-  styleUrls: ['./cliente-cadastro.component.css']
+  styleUrls: ['./cliente-cadastro.component.css'],
 })
 export class ClienteCadastroComponent {
+  public formCadastroCliente: FormGroup;
 
-  public formCadastroCliente: FormGroup
-
-  constructor (private clienteSevice: ClienteService, private router: Router) {
-    this.formCadastroCliente = this.getForm()
+  constructor(private clienteSevice: ClienteService, private router: Router) {
+    this.formCadastroCliente = this.getForm();
   }
 
   private getForm(): FormGroup {
@@ -23,48 +22,51 @@ export class ClienteCadastroComponent {
       nome: new FormControl('', [Validators.min(3), Validators.required]),
       email: new FormControl('', [Validators.min(3), Validators.required]),
       telefone: new FormControl('', [Validators.min(3), Validators.required]),
-    })
+    });
   }
 
   get nome() {
-    return this.formCadastroCliente.get('nome')
+    return this.formCadastroCliente.get('nome');
   }
 
   get email() {
-    return this.formCadastroCliente.get('email')
+    return this.formCadastroCliente.get('email');
   }
 
   get telefone() {
-    return this.formCadastroCliente.get('telefone')
+    return this.formCadastroCliente.get('telefone');
   }
 
   onCadastrarCliente(): void {
     const cliente: Partial<Cliente> = {
       nome: this.nome?.value,
       email: this.email?.value,
-      telefone: this.telefone?.value
-    }
+      telefone: this.telefone?.value,
+    };
 
-    const fields = Object.keys(cliente)
-    let isValid = true
+    const fields = Object.keys(cliente);
+    let isValid = true;
 
     for (const field of fields) {
       if (this.formCadastroCliente.get(field)?.invalid) {
-        this.formCadastroCliente.get(field)?.markAsDirty()
-        isValid = false
+        this.formCadastroCliente.get(field)?.markAsDirty();
+        isValid = false;
       }
     }
 
-    if (!isValid) return
+    if (!isValid) return;
 
     this.clienteSevice.save(cliente).subscribe({
       next: () => {
-        this.router.navigate(['cliente-lista'])
+        this.formCadastroCliente.markAsPristine();
+        this.router.navigate(['cliente-lista']);
       },
       error: (error: HttpErrorResponse) => {
-        console.error('Ocorreu um erro ao tentar salvar o cliente:', error.message)
-      }
-    })
-
+        console.error(
+          'Ocorreu um erro ao tentar salvar o cliente:',
+          error.message
+        );
+      },
+    });
   }
 }

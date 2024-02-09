@@ -91,6 +91,7 @@ export class ClienteEditarComponent implements OnInit {
     const id = this.cliente?.id ?? 0;
     this.clienteSevice.update(id, cliente).subscribe({
       next: () => {
+        this.formEditarCliente.markAsPristine();
         this.router.navigateByUrl('/cliente-lista');
       },
       error: (error: HttpErrorResponse) => {
